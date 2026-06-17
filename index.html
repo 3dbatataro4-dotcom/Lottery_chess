@@ -573,7 +573,6 @@
                 return;
             }
 
-            playDrawSFX();
             stage.innerHTML = '';
             const results = [];
             
@@ -596,6 +595,7 @@
 
             results.forEach((name, i) => {
                 setTimeout(() => {
+                    playDrawSFX();
                     const card = document.createElement('div');
                     card.className = 'card';
                     // Use absolute URL from File Garden
