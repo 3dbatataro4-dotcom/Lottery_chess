@@ -410,7 +410,7 @@
             }
 
             .grid {
-                grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(67px, 1fr));
                 gap: 10px;
             }
         }
@@ -426,7 +426,7 @@
     <div class="header-panel">
         <div class="stats">
             <div>累積召喚: <span id="totalPulls">0</span></div>
-            <div>圖鑑進度: <span id="progress">0</span> / 65</div>
+            <div>圖鑑進度: <span id="progress">0</span> / 67</div>
         </div>
 
         <div class="mode-toggle" id="modeToggle">
@@ -440,7 +440,7 @@
             <button onclick="draw(10)">十連抽</button>
             <div class="custom-draw">
                 <span>自訂:</span>
-                <input type="number" id="customCount" value="5" min="0" max="65">
+                <input type="number" id="customCount" value="5" min="0" max="67">
                 <button onclick="drawCustom()">抽!</button>
             </div>
             <button class="danger" onclick="fullReset()">全部重置</button>
@@ -490,12 +490,12 @@
         // --- GAME DATA ---
         const characters = [
             "阿朵菈", "艾薇", "安德烈", "奧吉莉亞", "奧拉", "保羅", "貝文", "彼得", "拿但業", "達利亞",
-            "達太", "多馬", "厄瑞斯", "恩雅", "腓力", "格納季", "公民老師", "哈蘇", "浩瀚花", "韭菜",
+            "達太", "多馬", "厄瑞斯", "恩雅", "腓力", "格納季", "羅多佩倫", "哈蘇", "浩瀚花", "韭菜",
             "卡洛特", "卡繆", "科絲塔", "克里昂", "拉扎爾", "蘭蘭", "朗川", "蕾", "莉莉斯", "林恩",
             "盧卡斯", "滿目", "蜜拉思", "茉莉", "默茜", "納希瑟斯", "尼奧扎里奧斯", "諾維安", "喬倫娜", "喬諾娜",
             "喬若娜", "薩利歐", "沈默茜", "索托斯", "提法洛恩", "萬里長城", "薇薇安", "維納托", "西爾維亞", "西門",
             "小蕾", "小雅各", "星星", "雅各", "伊莉莎白", "猶大", "雨果", "元首", "約翰", "韻華",
-            "AI皇后", "DBA", "DBB", "阿凡達", "張飛"
+            "AI皇后", "DBA", "DBB", "阿凡達", "張飛", "火山灰", "行星之母"
         ];
 
         let state = {
@@ -541,9 +541,9 @@
                 : state.availablePool.filter(c => !state.bannedCharacters.includes(c)).length;
 
             if (!state.isRepeatMode) {
-                remainingText.innerText = `獎池有效剩餘: ${activePoolCount} / 65`;
+                remainingText.innerText = `獎池有效剩餘: ${activePoolCount} / 67`;
             } else {
-                remainingText.innerText = `獎池有效人數: ${activePoolCount} / 65`;
+                remainingText.innerText = `獎池有效人數: ${activePoolCount} / 67`;
             }
 
             renderInventory();
@@ -645,7 +645,7 @@
             const input = document.getElementById('customCount');
             let val = parseInt(input.value);
             if (isNaN(val) || val < 0) val = 0;
-            if (val > 65) val = 65;
+            if (val > 67) val = 67;
             input.value = val;
             draw(val);
         }
